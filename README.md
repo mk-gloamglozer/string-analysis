@@ -11,7 +11,7 @@ Run parameters
 '''
 python3 -m string-analysis csv_file, background
 '''
-The program requires take one or more .csv files containing at least two columns. One column must contain Uniprot protein accession numbers and the other must contain the MCL cluster group to which the protein belongs. The accession column should be headed 'Accession' and the cluster group column '__mcl_cluster'.
+The program requires take one or more .csv files containing at least two columns. One column must contain Uniprot protein accession numbers and the other must contain the MCL cluster group to which the protein belongs. The accession column should be headed 'accession' and the cluster group column '__mclCluster'.
 
 When the program is first run it must download several files and parse one large file. This takes some time. If you change the background the program must parse the file again. 
 
