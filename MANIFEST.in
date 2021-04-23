@@ -1,2 +1,1 @@
-include resources/*.obo
-include resources/*.gaf
+include resources/

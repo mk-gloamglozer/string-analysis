@@ -3,11 +3,8 @@ from . import term_cloud
 from . import constants
 from . import download_util
 import glob
-import re
 from os import path, getcwd
-import sys
 from typing import List
-import zipfile
 
 def main(args):
 

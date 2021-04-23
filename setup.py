@@ -5,7 +5,7 @@ with open("README.md","r",encoding="utf-8") as fh:
 
 setuptools.setup(
     name="string-analysis-mkgloamglozer",
-    version="0.0.3",
+    version="0.0.8",
     author = "Mike Davies",
     author_email = "mikedaviespp@gmail.com",
     description="Program that conversts clustered string output into word clouds",
@@ -16,7 +16,8 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"":"string_analysis"},
-    packages = setuptools.find_packages(where="string_analysis"),
+    packages = ['string_analysis'],
+    include_package_data=True,
+    install_requires = ['matplotlib', 'numpy', 'requests', 'goscripts', 'wordcloud'],
     python_requires =">=3.8"
 )
