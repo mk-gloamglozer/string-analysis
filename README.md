@@ -20,9 +20,9 @@ The program requires take one or more .csv files containing at least two columns
 When the program is first run it must download several files and parse one large file. This takes some time. If you change the background the program must parse the file again. 
 
 The program will automatically download the latest versions of the Gene ontology files when it is first run, however should you wish to update these files to the most recent version. This can be done using the command:
-'''
+```
 python3 -m string-analysis -u
-'''
+```
 
 ## Output
 
