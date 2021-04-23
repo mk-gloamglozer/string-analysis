@@ -5,7 +5,7 @@ with open("README.md","r",encoding="utf-8") as fh:
 
 setuptools.setup(
     name="string-analysis-mkgloamglozer",
-    version="0.0.2",
+    version="0.0.3",
     author = "Mike Davies",
     author_email = "mikedaviespp@gmail.com",
     description="Program that conversts clustered string output into word clouds",
