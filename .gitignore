@@ -1,0 +1,9 @@
+.vscode/
+build/
+dist/
+images/
+resources/text_files/
+*.txt
+**__pycache__/
+**.egg-info
+*.csv
