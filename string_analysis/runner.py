@@ -1,13 +1,41 @@
 from . import generateTermFiles
 from . import term_cloud
 from . import constants
+from . import download_util
 import glob
 import re
 from os import path, getcwd
 import sys
 from typing import List
+import zipfile
 
 def main(args):
+
+    if is_update_flag(args) or not resources_exist():
+        run_update()
+
+    if not is_update_flag(args):
+        run_main(args)
+
+def is_update_flag(args):
+    try:
+        return args[1] == "-u"
+    except IndexError:
+        return False
+
+def resources_exist():
+    return path.exists(constants.OBO_FILELOCATION) and path.exists(constants.GAF_FILELOCATION)
+
+def run_update():
+    print("Updating resources")
+    print("Downloading obo file...")
+    download_util.download_file(constants.URL_OBO, constants.OBO_FILELOCATION)
+    print("Downloading gaf file...")
+    download_util.download_file(constants.URL_GAF, constants.GAF_ZIP_FILE, ftp=True)
+    print("Unzipping gaf file...")
+    download_util.unzip(constants.GAF_ZIP_FILE, constants.GAF_FILELOCATION)
+
+def run_main(args):
     try:
         filenames = get_filenames(args)
         background = get_background(args)
